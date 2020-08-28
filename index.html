@@ -5,9 +5,169 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Richard Young</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        html {
+
+            height: 100%;
+        }
+
+        body {
+            min-height: 100%;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: #0E0E0E;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+        }
+
+        .page-container {
+            width: 100%;
+            max-width: 1000px;
+            flex: 1;
+            color: white;
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .splash-overlay {
+            width: 100%;
+            height: min(100vh, 100vw);
+            display: flex;
+            flex-direction: row;
+            z-index: 1;
+            align-items: center;
+            position: relative;
+        }
+
+        .splash-overlay > * {
+            flex: 1;
+        }
+
+        .splash-image {
+            width: 100%;
+            height: min(100vh, 100vw);
+            object-fit: cover;
+            position: fixed;
+            top: 0;
+        }
+
+        .splash-content {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .title {
+            font-size: clamp(2em,5vw,3.5em);
+            color: white;
+            text-shadow: 1px 1px 4px #000000;
+        }
+
+        .actions {
+            display: flex;
+            flex-direction: row;
+            margin-top: 0.5em;
+            flex-wrap: wrap;
+        }
+
+        .action {
+            border: 1px solid white;
+            color: white;
+            /* font-size: 1.5em; */
+            font-size: clamp(1em,3vw,1.5em);
+            padding: 0.2em 0.5em;
+            margin-right: 0.5em;
+            margin-bottom: 0.5em;
+            background-color: rgba(0,0,0,0.1);
+            cursor: pointer;
+            user-select: none;
+        }
+        .action:hover {
+            transition: background-color 0.2s;
+            background-color: rgba(0,0,0,0.2);
+        }
+
+        .action:active { 
+            transform: scale(0.98); 
+            box-shadow: 2px 2px 6px 1px rgba(0, 0, 0, 0.24); 
+        } 
+
+        .arrow {
+            margin-bottom: -80px;
+            width: 62px;
+            position: absolute;
+            bottom: 0;
+            margin-left: auto;
+            margin-right: auto;
+            left: 0;
+            right: 0;
+        }
+
+        .arrow path {
+            stroke: #fff;
+            fill: transparent;
+            stroke-width: 1px;	
+        }
+
+        @media (orientation: portrait) {
+            .arrow {
+                display: none;
+            }
+        }
+
+    </style>
 </head>
 <body>
-    Richard Young
+    <img class="splash-image" src="images/splash.jpeg"></div>
+    <div class="splash-overlay">
+        <div></div>
+        <div class="splash-content">
+            <div class="title">Richard Young</div>
+            <div class="actions">
+                <div class="action">ABOUT</div>
+                <div class="action">BLOG</div>
+                <div class="action">CONTACT</div>
+            </div>
+        </div>
+        <svg class="arrow">
+            <path class="a1" d="M0 0 L30 32 L60 0"></path>
+        </svg>
+    </div>
+    <div class="page-container">
+        <p>Content coming</p>
+        
+
+    </div>
     
+    <script type="module">
+        const blurScrollRange = 0.3 * document.documentElement.clientWidth;
+        const opacityScrollRange = 0.6 * document.documentElement.clientWidth;
+        const blurRange = 10;
+        const opacityRange = 0.92;
+
+        function renderFromScrollPosition() {
+            const splash = document.querySelector('img.splash-image')
+
+            const blurScrollFactor = (Math.min(window.scrollY, blurScrollRange)/blurScrollRange)
+            const opacityScrollFactor = (Math.min(window.scrollY, opacityScrollRange)/opacityScrollRange)
+
+            const blurRadius = blurScrollFactor * blurRange;
+            splash.style.filter = `blur(${blurRadius}px)`;
+
+            splash.style.opacity = 1 - (opacityScrollFactor * opacityRange);
+        } 
+
+        window.addEventListener('scroll', (e) => {
+            renderFromScrollPosition()
+        })
+
+        renderFromScrollPosition()
+    </script>
 </body>
 </html>
