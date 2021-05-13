@@ -1,31 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Richard Young</title>
+    <link rel="stylesheet" type="text/css" href="/style/site.css" />
     <style>
-        * {
-            box-sizing: border-box;
-        }
-        html {
-
-            height: 100%;
-        }
-
-        body {
-            min-height: 100%;
-            margin: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            background-color: #0E0E0E;
-            font-family: Verdana, Geneva, Tahoma, sans-serif;
-
-        }
-
         .page-container {
             width: 100%;
             max-width: 1000px;
@@ -34,6 +16,7 @@
             z-index: 1;
             display: flex;
             flex-direction: column;
+            padding: 1em;
         }
 
         .splash-overlay {
@@ -46,7 +29,7 @@
             position: relative;
         }
 
-        .splash-overlay > * {
+        .splash-overlay>* {
             flex: 1;
         }
 
@@ -64,7 +47,7 @@
         }
 
         .title {
-            font-size: clamp(2em,5vw,3.5em);
+            font-size: clamp(2em, 5vw, 3.5em);
             color: white;
             text-shadow: 1px 1px 4px #000000;
         }
@@ -80,23 +63,25 @@
             border: 1px solid white;
             color: white;
             /* font-size: 1.5em; */
-            font-size: clamp(1em,3vw,1.5em);
+            font-size: clamp(1em, 3vw, 1.5em);
             padding: 0.2em 0.5em;
             margin-right: 0.5em;
             margin-bottom: 0.5em;
-            background-color: rgba(0,0,0,0.1);
+            background-color: rgba(0, 0, 0, 0.1);
             cursor: pointer;
             user-select: none;
-        }
-        .action:hover {
-            transition: background-color 0.2s;
-            background-color: rgba(0,0,0,0.2);
+            text-decoration: none;
         }
 
-        .action:active { 
-            transform: scale(0.98); 
-            box-shadow: 2px 2px 6px 1px rgba(0, 0, 0, 0.24); 
-        } 
+        .action:hover {
+            transition: background-color 0.2s;
+            background-color: rgba(0, 0, 0, 0.2);
+        }
+
+        .action:active {
+            transform: scale(0.98);
+            box-shadow: 2px 2px 6px 1px rgba(0, 0, 0, 0.24);
+        }
 
         .arrow {
             margin-bottom: -80px;
@@ -112,7 +97,26 @@
         .arrow path {
             stroke: #fff;
             fill: transparent;
-            stroke-width: 1px;	
+            stroke-width: 1px;
+        }
+
+        hr {
+            width: 100%;
+        }
+
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%;
+            /* 16:9 */
+            height: 0;
+        }
+
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
         }
 
         @media (orientation: portrait) {
@@ -120,19 +124,19 @@
                 display: none;
             }
         }
-
     </style>
 </head>
+
 <body>
-    <img class="splash-image" src="images/splash.jpeg"></div>
+    <img class="splash-image" src="images/splash.jpeg" />
     <div class="splash-overlay">
         <div></div>
         <div class="splash-content">
             <div class="title">Richard Young</div>
             <div class="actions">
-                <div class="action">ABOUT</div>
-                <div class="action">BLOG</div>
-                <div class="action">CONTACT</div>
+                <div class="action">about</div>
+                <a class="action" href="/blog">blog</a>
+                <div class="action">contact</div>
             </div>
         </div>
         <svg class="arrow">
@@ -140,11 +144,98 @@
         </svg>
     </div>
     <div class="page-container">
-        <p>Content coming</p>
-        
+        <p>
+            I am a <b>Software Developer</b> working for <a target=”_blank”
+                href="https://www.research.ibm.com/labs/africa/">IBM Research Africa</a>
+            based in Johannesburg, South Africa.
+        </p>
+        <p>
+            I love building web applications, trying out new technologies and tinkering with electronics and IoT
+            devices. In my
+            professional capacity I have been part of extraordinary teams building large scale business critical systems
+            for health
+            insurance and banking companies. I have also been fortunate enough to work with smaller teams designing and
+            building
+            multifaceted ecommerce systems coordinating real-time messaging between users, devices installed in retail
+            stores,
+            Point of Sale systems and scaled application clusters.
+        </p>
+        <p>
+            My current role has allowed me to put my skills to use in helping build up my local community. I worked on a
+            project that
+            assist students in township schools learn English by leveraging peer review, smart devices and Machine
+            Learning to provide them with instant
+            feedback on their creative writing.
+        </p>
+        <p>
+            At the start of the Covid-19 pandemic I was part of a team of highly skilled developers and data scientists
+            that assisted the Gauteng
+            Provincial Government process and map out infection data, population risk factors and prediction models. We
+            transformed the data into
+            interactive choropleth maps with advanced data filtering capabilities that allowed policy makers and
+            researchers to easily compare infection
+            hotspots with the location of communities that were most vulnerable.
+        </p>
+        <p>
+            Outside of work I am a musician, an avid hiker, a rock climber, an experimental chef, a travel lover, a life
+            hacker and an often regretful DIY enthusiast.
+            I also occasionally talk about tech topics at conferences and meetups.
+        </p>
+        <hr>
+        <h3>Links and Videos</h3>
+        <p>
+            <a target=”_blank”
+                href="https://www.engineeringnews.co.za/article/gauteng-covid-19-visualisation-platform-enables-monitoring-prediction-2020-07-07">Interview
+                with Engineering News</a>
+            on the creation of the Gauteng Province Covid-19 analytics tool.
+        </p>
+        <p>
+            <a target=”_blank”
+                href="https://speakerdeck.com/richardyoung00/devfest-2019-security-beyond-passwords">Security Beyond Passwords (Slides)</a>
+            at Google DevFest 2019 in Cape Town.
+        </p>
+        <p>
+            <a target=”_blank” href="https://www.youtube.com/watch?v=05xVzeFyug4">How to map a pandemic</a> at JoziJS meetup.
+            <br>
+        <div class="video-wrapper">
+            <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/05xVzeFyug4?start=209"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+        </div>
+        </p>
+        <p>
+            <a target=”_blank” href="https://www.youtube.com/watch?v=Valb2JWiUNA">Next level async with RxJS and
+                Observables</a> at JavaScript in South Africa Conference in July 2017.
+            <br>
+        <div class="video-wrapper">
+            <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/Valb2JWiUNA"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+        </div>
+        </p>
+        <p>
+            <a target=”_blank” href="https://www.youtube.com/watch?v=E1gpVBZ5FKw">Machine Learning in the Browser</a> at JoziJS meetup.
+            <br>
+        <div class="video-wrapper">
+            <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/E1gpVBZ5FKw"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+        </div>
+        </p>
+        <p>
+            <a target=”_blank” href="https://www.youtube.com/watch?v=VcDqaWoCAyg">JavaScript: A Test</a> at JoziJS meetup.
+            <br>
+        <div class="video-wrapper">
+            <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/VcDqaWoCAyg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        </p>
+
 
     </div>
-    
+
     <script type="module">
         const blurScrollRange = 0.3 * document.documentElement.clientWidth;
         const opacityScrollRange = 0.6 * document.documentElement.clientWidth;
@@ -154,14 +245,14 @@
         function renderFromScrollPosition() {
             const splash = document.querySelector('img.splash-image')
 
-            const blurScrollFactor = (Math.min(window.scrollY, blurScrollRange)/blurScrollRange)
-            const opacityScrollFactor = (Math.min(window.scrollY, opacityScrollRange)/opacityScrollRange)
+            const blurScrollFactor = (Math.min(window.scrollY, blurScrollRange) / blurScrollRange)
+            const opacityScrollFactor = (Math.min(window.scrollY, opacityScrollRange) / opacityScrollRange)
 
             const blurRadius = blurScrollFactor * blurRange;
             splash.style.filter = `blur(${blurRadius}px)`;
 
             splash.style.opacity = 1 - (opacityScrollFactor * opacityRange);
-        } 
+        }
 
         window.addEventListener('scroll', (e) => {
             renderFromScrollPosition()
@@ -170,4 +261,5 @@
         renderFromScrollPosition()
     </script>
 </body>
+
 </html>

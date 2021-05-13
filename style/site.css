@@ -1,0 +1,26 @@
+* {
+    box-sizing: border-box;
+}
+html {
+
+    height: 100%;
+}
+
+body {
+    min-height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #0E0E0E;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+a:link {
+    color: rgb(214, 206, 255);
+}
+
+a:visited {
+    color: rgb(214, 206, 255);
+}

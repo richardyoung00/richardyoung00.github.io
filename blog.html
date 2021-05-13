@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog | Richard Young</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="/style/site.css"/>
+</head>
+<body>
+    <div class="post-container">
+
+    </div>
+
+    <script type="module">
+
+        async function init() {
+            const posts = await (await fetch("/posts/index.json")).json()
+            console.log(posts)
+        }
+
+        init().catch(e => console.error(e))
+        
+    </script>
+</body>
+</html>
