@@ -128,7 +128,14 @@
 </head>
 
 <body>
-    <img class="splash-image" src="images/splash.jpeg" />
+    <img class="splash-image" sizes="(max-width: 1400px) 100vw, 1400px"
+    srcset="
+    images/splash_pwrtyp_c_scale,w_969.jpg 969w,
+    images/splash_pwrtyp_c_scale,w_1297.jpg 1297w,
+    images/splash_pwrtyp_c_scale,w_1400.jpg 1400w,
+    images/splash.jpg 1800w"
+    src="images/splash.jpg"
+    alt="" />
     <div class="splash-overlay">
         <div></div>
         <div class="splash-content">
