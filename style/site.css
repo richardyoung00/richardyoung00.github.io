@@ -15,12 +15,17 @@ body {
     justify-content: center;
     background-color: #0E0E0E;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: white;
 }
 
 a:link {
-    color: rgb(214, 206, 255);
+    color: white;
 }
 
 a:visited {
-    color: rgb(214, 206, 255);
+    color: white;
+}
+
+h1, h2, h3 {
+    font-weight: 100;
 }

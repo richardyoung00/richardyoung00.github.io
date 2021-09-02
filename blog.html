@@ -8,17 +8,32 @@
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 
     <link rel="stylesheet" type="text/css" href="/style/site.css"/>
+    <style>
+        body {
+            justify-content: start;
+        }
+    </style>
 </head>
 <body>
-    <div class="post-container">
-
-    </div>
+    
+    
+    <page-container>
+        <site-header></site-header>
+        <h1>Blog Posts</h1>
+        <post-list></post-list>
+    </page-container>
+    
 
     <script type="module">
+        import "/components/page-container.js"
+        import "/components/post-list.js"
+        import "/components/site-header.js"
+
 
         async function init() {
             const posts = await (await fetch("/posts/index.json")).json()
             console.log(posts)
+            document.querySelector("post-list").setData(posts)
         }
 
         init().catch(e => console.error(e))

@@ -4,6 +4,7 @@
         "createdOn": "2015-05-19",
         "published": true,
         "markdownPath": "/posts/2015_05_19_throwaway_tests/post.md",
+        "imagePath": "/posts/2015_05_19_throwaway_tests/powershell.png",
         "tags": ["PowerShell", "TDD"]
     }
 ]

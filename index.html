@@ -8,16 +8,6 @@
     <title>Richard Young</title>
     <link rel="stylesheet" type="text/css" href="/style/site.css" />
     <style>
-        .page-container {
-            width: 100%;
-            max-width: 1000px;
-            flex: 1;
-            color: white;
-            z-index: 1;
-            display: flex;
-            flex-direction: column;
-            padding: 1em;
-        }
 
         .splash-overlay {
             width: 100%;
@@ -147,7 +137,7 @@
             <path class="a1" d="M0 0 L30 32 L60 0"></path>
         </svg>
     </div>
-    <div class="page-container">
+    <page-container>
         <p>
             I am a <b>Software Developer</b> working for <a target=”_blank”
                 href="https://www.research.ibm.com/labs/africa/">IBM Research Africa</a>
@@ -245,9 +235,11 @@
         </p>
 
 
-    </div>
+    </page-container>
 
     <script type="module">
+        import "/components/page-container.js"
+
         const blurScrollRange = 0.3 * document.documentElement.clientWidth;
         const opacityScrollRange = 0.6 * document.documentElement.clientWidth;
         const blurRange = 10;
